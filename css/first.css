@@ -1,0 +1,10 @@
+body {
+    color: red;
+}
+#content{
+    border-color: blue;
+    border-width: 1px;
+    border-style: solid;
+    height: 400px;
+    width: 500px;
+}

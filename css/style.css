@@ -1,0 +1,21 @@
+body {
+    color: #1a1a1a;
+}
+#menu {
+    width: 70px;
+    height: 100%;
+    position: absolute;
+}
+#menu ul {
+    list-style: none outside none;
+    padding: 5px;
+}
+#container {
+    margin-left: 75px;
+}
+#footer{
+    margin-top: 35px;
+}
+.clear{
+    clear: both;
+}
