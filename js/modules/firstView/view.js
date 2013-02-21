@@ -2,19 +2,21 @@ define([
     'jquery',
     'backbone',
     'handlebars',
-    'views/common',
-    'text!views/templates/First.handlebars',
+    'modules/productionHeader/view',
+    'modules/menu/view',
+    'modules/footer/view',
+    'text!modules/firstView/template.handlebars',
     'models/models'
-], function($, Backbone, Handlebars, CommonViews, FirstTemplate, Models){
+], function($, Backbone, Handlebars, Header, Menu, Footer, template, Models){
     var Content = Backbone.View.extend({
-        template:        Handlebars.compile(FirstTemplate),
+        template:        Handlebars.compile(template),
         el:             $("#content"),
         initialize:     function(opts){
             new Models();
             $("#tempstylesheet").attr("href", "css/first.css");
-            this.header = new CommonViews.Header();
-            this.menu = new CommonViews.Menu();
-            this.footer = new CommonViews.Footer();
+            this.header = new Header();
+            this.menu = new Menu();
+            this.footer = new Footer();
             this.render();
         },
         render:         function(){
@@ -23,7 +25,5 @@ define([
             return this;
         }
     });
-    return {
-        First: Content
-    }
+    return Content;
 });

@@ -2,17 +2,19 @@ define([
     'jquery',
     'backbone',
     'handlebars',
-    'views/common',
-    'text!views/templates/Second.handlebars'
-], function($, Backbone, Handlebars, CommonViews, SecondTemplate){
+    'modules/printHeader/view',
+    'modules/menu/view',
+    'modules/footer/view',
+    'text!modules/secondView/template.handlebars'
+], function($, Backbone, Handlebars, Header, Menu, Footer, template){
     var Content = Backbone.View.extend({
-        template:        Handlebars.compile(SecondTemplate),
+        template:        Handlebars.compile(template),
         el:             $("#content"),
         initialize:     function(opts){
             $("#tempstylesheet").attr("href", "css/second.css");
-            this.header = new CommonViews.Header();
-            this.menu = new CommonViews.Menu();
-            this.footer = new CommonViews.Footer();
+            this.header = new Header();
+            this.menu = new Menu();
+            this.footer = new Footer();
             this.render();
         },
         render:         function(){
@@ -39,7 +41,5 @@ define([
             this.$el.find("#slide").find("img").attr("src", "images/up.png");
         }
     });
-    return {
-        Second: Content
-    }
+    return Content;
 });

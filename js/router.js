@@ -1,8 +1,7 @@
 define([
     'jquery',
-    'backbone',
-    'views/common'
-], function($, Backbone, cViews){
+    'backbone'
+], function($, Backbone){
     "use strict";
 
     return Backbone.Router.extend({
@@ -14,23 +13,23 @@ define([
 
         index:      function(){
             require([
-                'views/mainview'
-            ], function(Views){
-                var view = new Views.Main();
+                'modules/mainView/view'
+            ], function(View){
+                var view = new View();
             });
         },
         first:      function(){
             require([
-                'views/first'
-            ], function(Views){
-                var view = new Views.First();
+                'modules/firstView/view'
+            ], function(View){
+                var view = new View();
             });
         },
         second:     function(){
             require([
-                'views/second'
-            ], function(Views){
-                var view = new Views.Second();
+                'modules/secondView/view'
+            ], function(View){
+                var view = new View();
             });
         }
     });
