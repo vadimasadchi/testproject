@@ -3,9 +3,8 @@ define([
     'backbone',
     'handlebars',
     'views/common',
-    'text!views/templates/Main.handlebars',
-    'views/templates/ttt'
-], function($, Backbone, Handlebars, CommonViews, MainTemplate, ttt){
+    'text!views/templates/Main.handlebars'
+], function($, Backbone, Handlebars, CommonViews, MainTemplate){
     var Content = Backbone.View.extend({
         template:        Handlebars.compile(MainTemplate),
         el:             $("#content"),
