@@ -3,10 +3,11 @@ define([
     'backbone',
     'handlebars',
     'dateFormat',
+    'models/batches',
     'modules/menu/view',
     'text!modules/productionView/scanlist.handlebars',
-    'text!modules/productionView/header.handlebars'
-], function($, Backbone, Handlebars, dateFormat, Menu, scanlistTemplate, headerTemplate){
+    'text!modules/productionView/scanlistHeader.handlebars'
+], function($, Backbone, Handlebars, dateFormat, batches, Menu, scanlistTemplate, headerTemplate){
 
     var Header = Backbone.View.extend({
         template:       Handlebars.compile(headerTemplate),
@@ -29,22 +30,17 @@ define([
             this.header = new Header();
             this.menu = new Menu();
             
-            var stationId = 3000;
-
+            var stationId = parseURL()['station-id'];
             this.loadBatches(stationId);
         },
         loadBatches: function(stationId){
 
-			var baseUrl = "http://oneflow-dummy.azurewebsites.net";
-//			var baseUrl = "http://localhost:8080";
-
-			var url = baseUrl+"/batchdetails/machine/"+stationId;
-			var view = this;
-			
-			$.getJSON(url, function(data) {	
-				view.displayBatches(data.values);
-			}).error(function(){
-
+	        var view = this;
+			var batches = new BatchesList({stationId:stationId});
+			batches.fetch({
+				success:function(collection){
+					view.displayBatches(collection.toJSON());
+				}
 			});
 
         },
@@ -150,6 +146,20 @@ define([
 
 
 
+function parseURL()	{
+	var vars = [], hash;
+	    var q = document.URL.split('?')[1];
+	        q = q.split('#')[0];
+	    if(q != undefined){
+	        q = q.split('&');
+	        for(var i = 0; i < q.length; i++){
+	            hash = q[i].split('=');
+	            vars.push(hash[1]);
+	            vars[hash[0]] = hash[1];
+        }
+	}	
+	return vars;
+}
 
 
 function getDueMins(date)	{

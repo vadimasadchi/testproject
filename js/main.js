@@ -26,7 +26,7 @@ require.config({
         backboneLocalstorage: 'lib/backbone-localstorage',
         handlebars: 'lib/handlebars',
         text: 'lib/text',
-        dateFormat: './lib/date.format',
+        dateFormat: './lib/date.format'
     }
 });
 
