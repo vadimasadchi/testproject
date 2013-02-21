@@ -167,3 +167,7 @@ header {
     box-sizing: border-box;
 }
 
+#header {
+    color: #606060;
+}
+

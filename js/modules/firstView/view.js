@@ -2,17 +2,39 @@ define([
     'jquery',
     'backbone',
     'handlebars',
-    'modules/productionHeader/view',
     'modules/menu/view',
-    'modules/footer/view',
     'text!modules/firstView/template.handlebars',
-    'models/models'
-], function($, Backbone, Handlebars, Header, Menu, Footer, template, Models){
+    'text!modules/firstView/header.handlebars',
+    'text!modules/firstView/footer.handlebars'
+], function($, Backbone, Handlebars, Menu, template, headerTemplate, footerTemplate){
+    var Footer = Backbone.View.extend({
+        template:       Handlebars.compile(footerTemplate),
+        el:             $("#footer"),
+        initialize:     function(opts){
+            this.render();
+        },
+        render:         function(){
+            var that = this;
+            that.$el.html(that.template());
+            return this;
+        }
+    });
+    var Header = Backbone.View.extend({
+        template:       Handlebars.compile(headerTemplate),
+        el:             $("#header"),
+        initialize:     function(opts){
+            this.render();
+        },
+        render:         function(){
+            var that = this;
+            that.$el.html(that.template());
+            return this;
+        }
+    });
     var Content = Backbone.View.extend({
         template:        Handlebars.compile(template),
         el:             $("#content"),
         initialize:     function(opts){
-            new Models();
             $("#tempstylesheet").attr("href", "css/first.css");
             this.header = new Header();
             this.menu = new Menu();
@@ -25,5 +47,6 @@ define([
             return this;
         }
     });
+
     return Content;
 });
