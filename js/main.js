@@ -25,7 +25,8 @@ require.config({
         backbone: 'lib/backbone-min',
         backboneLocalstorage: 'lib/backbone-localstorage',
         handlebars: 'lib/handlebars',
-        text: 'lib/text'
+        text: 'lib/text',
+        dateFormat: './lib/date.format',
     }
 });
 
