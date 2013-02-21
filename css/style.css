@@ -1,5 +1,21 @@
 body {
-    color: #1a1a1a;
+    margin: 0px;
+    background: none !important;
+    color: #3c454c;
+    font-family: 'Open Sans',Arial,sans-serif;
+    font-weight: 300;
+    font-size: 100%;
+}
+.header-title {
+    position: absolute;
+    left: 90px;
+    top: 20px;
+    height: 40px;
+    width: 700px;
+    font-size: 24pt;
+    padding-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 #menu {
     width: 70px;
@@ -8,10 +24,18 @@ body {
 }
 #menu ul {
     list-style: none outside none;
-    padding: 5px;
+    padding: 0;
 }
 #container {
-    margin-left: 75px;
+    position: fixed;
+    top: 101px;
+    bottom: 0px;
+    padding: 10px 45px 40px 90px;
+
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
+    overflow: hidden;
+    margin: 0 auto;
 }
 #footer{
     margin-top: 35px;
@@ -19,3 +43,127 @@ body {
 .clear{
     clear: both;
 }
+.menubox{
+    position: absolute;
+    left: -125px;
+    width: 125px;
+    height: 100%;
+    z-index: 10;
+    color: #fff;
+    background: #3c454c; /* Old browsers */
+    background: -webkit-linear-gradient(top, #3c454c 0%, #2d3439 100%);
+
+    background: -moz-linear-gradient(top, #3c454c 0%, #2d3439 100%);
+    background: -o-linear-gradient(top, #3c454c 0%, #2d3439 100%);
+    background: -ms-linear-gradient(top, #3c454c 0%, #2d3439 100%);
+    background: linear-gradient(top, #3c454c 0%, #2d3439 100%); /* W3C */
+    -image  -image -image filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c454c', endColorstr='#2d3439',GradientType=0 ); /* IE6-9 */
+}
+.menubox > p{
+    margin: 15px 0 70px;
+    text-align: center;
+}
+.menubox ul a{
+    display: block;
+    width: 100%;
+    height: 70px;
+    background-image: url(../images/icons_mainnav.png);
+    background-repeat: no-repeat;
+    text-indent: -1000em;
+    padding: 10px 0;
+}
+.menubox .menuDashboard a {
+    background-position: 34px 17px;
+}
+
+.menubox .menuDashboard a.active,.menubox .menuDashboard a:hover {
+    background-position: -124px 9px;
+}
+
+.menubox .menuProduction a {
+    background-position: 34px -83px;
+}
+
+.menubox .menuProduction a.active,.menubox .menuProduction a:hover {
+    background-position: -124px -91px;
+}
+
+/* BUTTONS ================================================================== */
+.button {
+    display: block;
+    width: 48px;
+    height: 48px;
+    text-indent: -1000em;
+    border: 1px solid #dddddd;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 24px;
+    background: #ffffff no-repeat 10px 12px; /* Old browsers */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #f0f0f0 100%);
+
+    background: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #f0f0f0 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #f0f0f0 100%);
+    background: linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, .5);
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, .5);
+}
+
+.button:before {
+    z-index: 1;
+    position: absolute;
+    content: "";
+}
+
+.buttonNav:before {
+    background-image: url(../images/icon_nav.png);
+    height: 22px;
+    width: 23px;
+    left: 10px;
+    top: 13px;
+}
+
+.buttonSearch:before {
+    background-image: url(../images/icon_search.png);
+    height: 28px;
+    width: 28px;
+    left: 10px;
+    top: 10px;
+}
+
+/* NAVIGATION ================================================================== */
+#buttonNav {
+    position: fixed;
+    left: 0;
+    top: 25px;
+    border-left: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+
+    border-radius-topleft: 0;
+    border-radius-bottomleft: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 100;
+}
+
+header {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 25px 20px 25px 90px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+    height: 101px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
