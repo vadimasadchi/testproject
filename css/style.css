@@ -43,6 +43,7 @@ body {
 .clear{
     clear: both;
 }
+<<<<<<< HEAD
 .menubox{
     position: absolute;
     left: -125px;
@@ -167,3 +168,5 @@ header {
     box-sizing: border-box;
 }
 
+=======
+>>>>>>> css test
