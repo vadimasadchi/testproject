@@ -61,13 +61,13 @@
 	height: 20px;
 }
 
-.keyped-overlay {
+.slide-panel-overlay {
 	background: rgba(255,255,255,0.81);
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: 101px;
 	width: 100%;
-	height: 100%;
+	bottom:0px;
 	z-index: 18;
 	display: none;
 }
@@ -99,6 +99,7 @@
 }
 
 .scanlist-header {
+	z-index:22;
 	display: none;
 }
 
@@ -106,45 +107,23 @@
 	display: none;
 }
 
-#keypadButton {
+#slide-panel-button {
+	position: relative;
 	background: url('../images/keypad-button.png');
-	width: 63px;
-	height: 60px;
+	float: right;
+	height: 58px;
+	width: 57px;
+	top: -10px;
+	margin-right: 20px;	
+	cursor:pointer;
 }
-#key-display,#scan-icon,#scan-warn,#keypadButton,.search-icon,.back-icon {
+#key-display,#scan-icon,#scan-warn,#slide-panel-button,.search-icon,.back-icon {
 	text-indent: -9999px;
 }
 
 
 
 /* PRODUCTION SCANNING ================================================================== */
-.templateProductionscanning header {
-	border-bottom: 1px solid #e5e5e5;
-	padding: 25px 20px 25px 90px;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	z-index: 1;
-	background: #fff;
-	width: 100%;
-	height: 101px;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.templateProductionscanning .container {
-	position: fixed;
-	top: 101px;
-	bottom: 0px;
-	padding: 10px 45px 40px 90px;
-
-	-ms-overflow-y: scroll;
-	overflow-y: scroll;
-	margin: 0 auto;
-}
 
 .itemGroup {
 	padding: 0 15px 0 145px;
@@ -392,112 +371,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', end
 
 
 
-/* New Styling by John @ Pixelter.com
-==========================================*/
-#scanning-stations {
-	margin: 30px 0 0;
-	padding: 0;
-}
-
-#scanning-stations li {
-	list-style: none;
-	display: inline-block;
-	width: 190px;
-	margin: 0 0 40px;
-	text-align: center;
-}
-
-#scanning-stations li a {
-	color: #111;
-	background: url(../images/icon_mainnav_user.png) no-repeat center top;
-	display: block;
-	padding-top: 100px;
-}
-
-.ui-page {
-	max-width: 100% !important;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-	min-width: 1024px;
-}
-
-.itemGroupOverdue,.itemGroupDue {
-	margin-bottom: 20px;
-}
-
-#scan-log .warring,#scan-log .check {
-	width: 25px;
-	padding: 5px;
-	display: inline-block;
-}
-
-#scan-log .warring {
-	background: url(../images/warring.png) no-repeat center center;
-	height: 24px;
-}
-
-#scan-log .check {
-	background: url(../images/check.png) no-repeat center center;
-	height: 20px;
-}
-
-.keyped-overlay {
-	background: rgba(255,255,255,0.81);
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 18;
-	display: none;
-}
-
-#keypad .back-icon,#keypad .search-icon {
-	display: block;
-	width: 96px;
-	height: 67px;
-}
-
-#keypad .back-icon {
-	background: url(../images/back.png) no-repeat center center;
-}
-
-#keypad .search-icon {
-	background: url(../images/search.png) no-repeat center center;
-}
-
-#status-barcode.basic {
-	background: url(../images/keypad-icon.png) no-repeat 20px center #f7f7f7;
-
-	-webkit-box-shadow: inset 1px 2px 2px rgba(0,0,0,0.35), 0 0 1px rgba(0,0,0,0.58);
-	box-shadow: inset 1px 2px 2px rgba(0,0,0,0.35), 0 0 1px rgba(0,0,0,0.58);
-	color: #3c454c;
-}
-
-#status-barcode.basic #scan-icon,#status-barcode.basic #scan-warn {
-	visibility: hidden;
-}
-
-.scanlist-header {
-	display: none;
-}
-
-.print-header {
-	display: none;
-}
-
-#slide-panel-button {
-	background: url('../images/keypad-button.png');
-	width: 63px;
-	height: 60px;
-	cursor:pointer;
-}
-#key-display,#scan-icon,#scan-warn,#keypadButton,.search-icon,.back-icon {
-	text-indent: -9999px;
-}
 
 
 
@@ -572,92 +445,10 @@ body {
 	width: 1190px;
 }
 
-#navMain {
-	z-index: 110;
-}
 
-#navLevel1 {
-	z-index: 110;
-}
 
-#navLevel2 {
-	z-index: 109;
-}
 
-#buttonNav {
-	z-index: 101;
-}
 
-#keypadButton {
-	position: relative;
-	top: -10px;
-	float: right;
-	height: 58px;
-	width: 57px;
-	margin-right: 20px;
-}
-
-button {
-	margin: 10px;
-	width: 300px;
-	height: 80px;
-}
-
-.shiftRight0 {
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
-
-	-webkit-transform: translate(125px, 0);
-	-moz-transform: translate(125px, 0);
-	-o-transform: translate(125px, 0);
-	-ms-transform: translate(125px, 0);
-	transform: translate(125px, 0);
-}
-
-.shiftLeft0 {
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
-
-	-webkit-transform: translate(0px, 0);
-	-moz-transform: translate(0px, 0);
-	-o-transform: translate(0px, 0);
-	-ms-transform: translate(0px, 0);
-	transform: translate(0px, 0);
-}
-
-.shiftRight1 {
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
-
-	-webkit-transform: translate(375px, 0);
-	-moz-transform: translate(375px, 0);
-	-o-transform: translate(375px, 0);
-	-ms-transform: translate(375px, 0);
-	transform: translate(375px, 0);
-}
-
-.shiftLeft1 {
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
-
-	-webkit-transform: translate(0px, 0);
-	-moz-transform: translate(0px, 0);
-	-o-transform: translate(0px, 0);
-	-ms-transform: translate(0px, 0);
-	transform: translate(0px, 0);
-}
 
 #key-display {
 	display: none;
@@ -725,18 +516,13 @@ position: absolute;
 }
 
 
-.templateProductionscanning header {
-	z-index: 100;
-	background-color: white;
-}
-
-#keypad-entry {
+#slide-panel {
 	background-color: white;
 	z-index: 19;
 	position: fixed;
 	top: -600px;
 	left: 0px;
-	width: 1190px;
+	width: 100%;
 	background: #fff;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 80px;

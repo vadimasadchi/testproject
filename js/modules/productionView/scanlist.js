@@ -6,8 +6,9 @@ define([
     'models/batches',
     'modules/menu/view',
     'text!modules/productionView/scanlist.handlebars',
-    'text!modules/productionView/scanlistHeader.handlebars'
-], function($, Backbone, Handlebars, dateFormat, batches, Menu, scanlistTemplate, headerTemplate){
+    'text!modules/productionView/scanlistHeader.handlebars',
+    'text!modules/productionView/slidePanel.handlebars'
+], function($, Backbone, Handlebars, dateFormat, batches, Menu, scanlistTemplate, headerTemplate, slidePanelTemplate){
 
     var Header = Backbone.View.extend({
         template:       Handlebars.compile(headerTemplate),
@@ -18,7 +19,23 @@ define([
         render:         function(){
             var that = this;
             that.$el.html(that.template());
-            console.log("rendering");
+            console.log("rendering header");
+            
+            return this;
+        }
+        
+    });
+
+    var SlidePanel = Backbone.View.extend({
+        template:       Handlebars.compile(slidePanelTemplate),
+        el:             $("#slide-panel-container"),
+        initialize:     function(opts){
+            console.log("rendering slide panel");
+            this.render();
+        },
+        render:         function(){
+            var that = this;
+            that.$el.html(that.template());
             $("#slide-panel-button").click(this.toggleSlidePanel);
             
             return this;
@@ -38,7 +55,6 @@ define([
 //				$('#status-barcode').removeClass().addClass('basic').find('#scan-text').text('');
 			}
 		}
-        
     });
     
     var Content = Backbone.View.extend({
@@ -48,6 +64,7 @@ define([
             $("#tempstylesheet").attr("href", "css/production.css?"+Math.random());
             this.header = new Header();
             this.menu = new Menu();
+            this.slideMenu = new SlidePanel();
             
             var stationId = parseURL()['station-id'];
             this.loadBatches(stationId);
