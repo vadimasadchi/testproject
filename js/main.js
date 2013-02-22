@@ -1,3 +1,13 @@
+
+
+
+var baseUrl = "http://localhost:8080";
+//var baseUrl = "http://oneflow-dummy.azurewebsites.net";
+
+
+
+
+
 require.config({
 // The shim config allows us to configure dependencies for
 // scripts that do not call define() to register a module
@@ -26,7 +36,9 @@ require.config({
         backboneLocalstorage: 'lib/backbone-localstorage',
         handlebars: 'lib/handlebars',
         text: 'lib/text',
-        dateFormat: './lib/date.format'
+        common: './common',
+        dateFormat: './lib/date.format',
+        transit: './lib/jquery.transit'
     }
 });
 
@@ -35,3 +47,4 @@ require(["router", "backbone"], function(Router, Backbone) {
     new Router();
     Backbone.history.start();
 });
+

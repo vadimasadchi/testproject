@@ -1,5 +1,3 @@
-var baseUrl = "http://localhost:8080";
-
 var StationModel = Backbone.Model.extend({
 	urlRoot: baseUrl+'/machines/Production',
 	defaults: {
@@ -16,8 +14,12 @@ var StationModel = Backbone.Model.extend({
 
 var StationsList = Backbone.Collection.extend({
     model: StationModel,
-    url:baseUrl+'/machines/Production',
+  	url:function(){
+  		console.log(url);
+		return  baseUrl+'/machines/Production?'+Math.random();
+	},
     parse: function(response) {
 	    return response.values;
 	}
 });
+

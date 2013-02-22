@@ -1,6 +1,3 @@
-//var baseUrl = "http://localhost:8080";
-var baseUrl = "http://oneflow-dummy.azurewebsites.net";
-
 var BatchModel = Backbone.Model.extend({
 	defaults: {
 		BatchNo: '',
@@ -24,6 +21,7 @@ var BatchesList = Backbone.Collection.extend({
 		this.stationId = props.stationId;
 	},
   	url:function(){
+  		console.log(baseUrl);
 		return  baseUrl+'/batchdetails/machine/'+this.stationId;
 	},
 	setStationId:function(stationId){
