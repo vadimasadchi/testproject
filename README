@@ -1,1 +1,29 @@
-This file was created by JetBrains PhpStorm 5.0.4 for binding GitHub repository
+biuld your own module
+1) create directory in js/modules
+2) create view.js, css and html templates(commonly *.handlebars) there
+3) define module in view.js(look at js/modules/mainView/view.js): require([...], handler)
+    1.first argument is array of dependencies like js libraries, other modules and templates
+    2.handler takes all resources and define Backbone view(s)
+4) Extend your own view in handler:
+    var View = Backbone.View.extend({
+        el:     $("#name"),     //set main html element of this view
+        initialize: function(){
+            //constructor of new instance
+        },
+        render: function(){
+            //special method, which render view to element this.el or this.$el
+        }
+    });
+    return View;  //necessarily
+5) add handler to js/router.js e.g.:
+            YourHandler:     function(){
+                require([
+                    'modules/YourModule/view'
+                ], function(View){
+                    var view = new View();
+                });
+            }
+6) add route in the top of Router object:
+    "YourLink" /*link for your view*/:            "YourHandler" //your handler from 5)
+
+save, run and enjoy!
