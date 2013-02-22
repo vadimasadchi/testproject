@@ -18,8 +18,27 @@ define([
         render:         function(){
             var that = this;
             that.$el.html(that.template());
+            console.log("rendering");
+            $("#slide-panel-button").click(this.toggleSlidePanel);
+            
             return this;
-        }
+        },
+		toggleSlidePanel: function(){
+			
+			var slidePanel = $("#slide-panel");
+			if (slidePanel.hasClass("shiftDown"))	{
+				slidePanel.addClass("shiftUp");		
+				slidePanel.removeClass("shiftDown");
+				$('.slide-panel-overlay').fadeOut();	
+						
+			}	else	{
+				slidePanel.addClass("shiftDown");		
+				slidePanel.removeClass("shiftUp");		
+				$('.slide-panel-overlay').fadeIn();
+//				$('#status-barcode').removeClass().addClass('basic').find('#scan-text').text('');
+			}
+		}
+        
     });
     
     var Content = Backbone.View.extend({

@@ -1,4 +1,5 @@
-var baseUrl = "http://localhost:8080";
+//var baseUrl = "http://localhost:8080";
+var baseUrl = "http://oneflow-dummy.azurewebsites.net";
 
 var BatchModel = Backbone.Model.extend({
 	defaults: {

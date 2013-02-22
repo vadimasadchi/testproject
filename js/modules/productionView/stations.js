@@ -5,10 +5,10 @@ define([
     'dateFormat',
     'models/stations',
     'modules/menu/view',
-    'text!modules/productionView/template.handlebars',
+    'text!modules/productionView/stations.handlebars',
     'text!modules/productionView/header.handlebars',
     'text!modules/productionView/footer.handlebars'
-], function($, Backbone, Handlebars, dateFormat, stationModel, Menu, template, headerTemplate, footerTemplate){
+], function($, Backbone, Handlebars, dateFormat, stations, Menu, stationsTemplate, headerTemplate, footerTemplate){
 
     var Footer = Backbone.View.extend({
         template:       Handlebars.compile(footerTemplate),
@@ -38,7 +38,7 @@ define([
     
     
     var Content = Backbone.View.extend({
-        template:        Handlebars.compile(template),
+        template:       Handlebars.compile(stationsTemplate),
         el:             $("#content"),
         initialize:     function(opts){
         

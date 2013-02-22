@@ -489,10 +489,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', end
 	display: none;
 }
 
-#keypadButton {
+#slide-panel-button {
 	background: url('../images/keypad-button.png');
 	width: 63px;
 	height: 60px;
+	cursor:pointer;
 }
 #key-display,#scan-icon,#scan-warn,#keypadButton,.search-icon,.back-icon {
 	text-indent: -9999px;

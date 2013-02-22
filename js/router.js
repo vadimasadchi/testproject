@@ -30,7 +30,7 @@ define([
         },
         production:     function(){
             require([
-                'modules/productionView/view'
+                'modules/productionView/stations'
             ], function(View){
                 var view = new View();
             });
