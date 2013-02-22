@@ -7,8 +7,11 @@ define([
     return Backbone.Router.extend({
         routes: {
             '':  'index',
-            "first":              "first",
-            "second":            "second"
+            "first":		"first",
+            "second":		"second",
+            "dashboard":	"dashboard",
+            "production":	"production",
+            "scanlist":		"scanlist"
         },
 
         index:      function(){
@@ -18,16 +21,23 @@ define([
                 var view = new View();
             });
         },
-        first:      function(){
+        dashboard:      function(){
             require([
-                'modules/firstView/view'
+                'modules/dashboardView/view'
             ], function(View){
                 var view = new View();
             });
         },
-        second:     function(){
+        production:     function(){
             require([
-                'modules/secondView/view'
+                'modules/productionView/view'
+            ], function(View){
+                var view = new View();
+            });
+        },
+        scanlist:     function(){
+            require([
+                'modules/productionView/scanlist'
             ], function(View){
                 var view = new View();
             });

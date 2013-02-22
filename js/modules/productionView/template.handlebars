@@ -1,0 +1,11 @@
+<div id="scan-list-machines">
+	<nav>
+		<ul id="scanning-stations">
+		{{#each stations}}
+			<li>
+				<a href="?station-id={{ID}}#scanlist" class="station-link" machine-id="{{ID}}">{{Name}}</a>
+			</li>
+		{{/each}}
+		</ul>
+	</nav>
+</div>

@@ -1,0 +1,93 @@
+<div id="scanlist">
+
+	<div class="itemGroup itemGroupOverdue" id="itemGroupOverdue" style="display:none">
+		<h2><strong id="overduecount">{{redCount}}</strong> overdue</h2>
+
+		{{#each redItems}}
+			<div class="item" id="barcode-{{this.BatchScanNumber}}" batchdetailsid="{{this.ID}}">
+				<h3>{{this.ProductName}}</h3>
+				<ul class="itemProperties1">
+					<!--<li>Gloss</li>-->
+				</ul>
+				<div class="itemTime">
+					<dl>
+						<dt>hr</dt>
+						<dd>{{this.DueInHours}}</dd>
+						<dt class="itemTimeMin">min</dt>
+						<dd class="itemTimeMin">{{this.DueInMins}}</dd>
+					</dl>
+				</div>
+				<dl class="itemProperties2">
+					<dt>Quantity</dt>
+					<dd>{{this.Quantity}}</dd>
+					<dt>Client</dt>
+					<dd>{{this.ClientName}}</dd>
+				</dl>
+				<dl class="itemBatch">
+					<dt>Batch</dt>
+					<dd>{{this.BatchNo}}</dd>
+				</dl>
+			</div>
+		{{/each}}
+
+	</div>
+	<div class="itemGroup itemGroupDue" id="itemGroupDue" style="display:none">
+		<h2><strong id="duecount">{{amberCount}}</strong> due soon</h2>		
+		{{#each amberItems}}
+			<div class="item" id="barcode-{{this.BatchScanNumber}}" batchdetailsid="{{this.ID}}">
+				<h3>{{this.ProductName}}</h3>
+				<ul class="itemProperties1">
+					<!--<li>Gloss</li>-->
+				</ul>
+				<div class="itemTime">
+					<dl>
+						<dt>hr</dt>
+						<dd>{{this.DueInHours}}</dd>
+						<dt class="itemTimeMin">min</dt>
+						<dd class="itemTimeMin">{{this.DueInMins}}</dd>
+					</dl>
+				</div>
+				<dl class="itemProperties2">
+					<dt>Quantity</dt>
+					<dd>{{this.Quantity}}</dd>
+					<dt>Client</dt>
+					<dd>{{this.ClientName}}</dd>
+				</dl>
+				<dl class="itemBatch">
+					<dt>Batch</dt>
+					<dd>{{this.BatchNo}}</dd>
+				</dl>
+			</div>
+		{{/each}}
+	</div>
+	<div class="itemGroup itemGroupNooverdue" id="itemGroup" style="display:none">
+		<h2><strong id="jobcount">{{greenCount}}</strong> batches</h2>		
+		{{#each greenItems}}
+			<div class="item" id="barcode-{{this.BatchScanNumber}}" batchdetailsid="{{this.ID}}">
+				<h3>{{this.ProductName}}</h3>
+				<ul class="itemProperties1">
+					<!--<li>Gloss</li>-->
+				</ul>
+				<div class="itemTime">
+					<dl>
+						<dt>hr</dt>
+						<dd>{{this.DueInHours}}</dd>
+						<dt class="itemTimeMin">min</dt>
+						<dd class="itemTimeMin">{{this.DueInMins}}</dd>
+					</dl>
+				</div>
+				<dl class="itemProperties2">
+					<dt>Quantity</dt>
+					<dd>{{this.Quantity}}</dd>
+					<dt>Client</dt>
+					<dd>{{this.ClientName}}</dd>
+				</dl>
+				<dl class="itemBatch">
+					<dt>Batch</dt>
+					<dd>{{this.BatchNo}}</dd>
+				</dl>
+			</div>
+		{{/each}}
+	</div>		
+
+</div>
